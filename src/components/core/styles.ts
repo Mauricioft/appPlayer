@@ -7,10 +7,18 @@ export default StyleSheet.create({
   space: {
     flex: 1
   },
-  title: {
-    fontSize: 15,
-    fontFamily: 'gibson-bold',
+  text: {
     color: 'rgba(255, 255, 255, 0.72)',
     textAlign:'center',
+  },
+  title: {
+    fontSize: 16,
+    fontFamily: 'gibson-bold',
+    fontWeight: '500',
+  },
+  sub_title: {
+    fontSize: 14,
+    fontFamily: 'gibson-regular',
+    fontWeight: '300',
   }
 });

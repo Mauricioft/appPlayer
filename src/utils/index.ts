@@ -7,9 +7,12 @@ export const fetchFonts = () => {
   });
 }
 
-const pad = (n:number, width: number, z: number = 0) => n.toString().length >= width ? n : new Array(width - n.toString().length + 1).join(z.toString()) + n;
+const pad = (n:number, width: number, z: number = 0) => 
+  n.toString().length >= width ? 
+    n : 
+    new Array(width - n.toString().length + 1).join(z.toString()) + n;
 
-export const minutesAndSeconds = (position) => ([
+export const minutesAndSeconds = (position: number) => ([
   pad(Math.floor(position / 60), 2),
   pad(position % 60, 2),
 ]);

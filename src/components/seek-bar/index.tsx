@@ -1,20 +1,29 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import { ProgressBar } from '../progress-bar/';
-import { SeekBarLayout } from '../seek-bar-layout/'
-import { Row, Space } from '../core/';
+import { SeekBarLayout as Layout } from '../seek-bar-layout/'
+import { Row, Space, Title, SubTitle } from '../core/';
+import styles from './styles'
 
 type Props = {
   currentPosition: number; 
   trackLength: number; 
+  remaining_minutes: number | string; 
+  remaining_seconds: number | string; 
+  elapsed_minutes: number | string; 
+  elapsed_seconds: number | string; 
   onSlidingStart: () => void; 
   onSeek: (value: number) => void; 
 }
 
-export const SeekBar = ({ currentPosition, trackLength, onSlidingStart, onSeek }: Props) => (
-  <SeekBarLayout>
+export const SeekBar = ({ currentPosition, trackLength, onSlidingStart, onSeek, elapsed_minutes, elapsed_seconds, remaining_minutes, remaining_seconds }: Props) => (
+  <Layout>
     <Row>
+      <Title title={`${elapsed_minutes}:${elapsed_seconds}`} />
       <Space />
+      <SubTitle 
+        title={trackLength > 1 && `-${remaining_minutes}:${remaining_seconds}`}
+        textStyle={styles.text}
+      />
     </Row>
     <ProgressBar 
       currentPosition={currentPosition}
@@ -22,5 +31,5 @@ export const SeekBar = ({ currentPosition, trackLength, onSlidingStart, onSeek }
       onSlidingStart={onSlidingStart}
       onSeek={onSeek}
     />
-  </SeekBarLayout>
+  </Layout>
 )

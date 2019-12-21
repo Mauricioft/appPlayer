@@ -8,5 +8,5 @@ type Props = {
 }
 
 export const Title = ({ title, textStyle }: Props) => (
-  <Text style={[styles.title, textStyle]}>{title}</Text>
+  <Text style={[styles.text, styles.title, textStyle]}>{title}</Text>
 )
