@@ -1,7 +1,6 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  
   playButton: {
     height: 72,
     width: 72,
@@ -17,5 +16,8 @@ export default StyleSheet.create({
   },
   off: {
     opacity: 0.30,
+  },
+  forwardDisabled: {
+    opacity: 0.3
   }
 });

@@ -4,7 +4,8 @@ export default StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: 8,
+    justifyContent: 'space-around',
+    paddingTop: 10,
+    paddingHorizontal: 15,
   },
 });

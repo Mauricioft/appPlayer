@@ -1,6 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, ViewStyle } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import styles from './styles';
 
 type Props = {
   onPress?: () => void;
@@ -19,7 +20,7 @@ const defaultProps = {
 
 const Button = ({ onPress, activeOpacity, icon, buttonStyle, iconSize, disabled }: Props) => (
   <TouchableOpacity style={[buttonStyle]} activeOpacity={activeOpacity} onPress={onPress} disabled={disabled}>
-    <Ionicons name={icon} size={iconSize} />
+    <Ionicons style={styles.icon_button} name={icon} size={iconSize} />
   </TouchableOpacity>
 )
 

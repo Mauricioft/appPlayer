@@ -4,8 +4,7 @@ export default StyleSheet.create({
   container: {
     height: 72,
     paddingTop: 20,
-    paddingLeft: 12,
-    paddingRight: 12,
+    paddingHorizontal: 15,
     flexDirection: 'row',
   },
   message: {
@@ -16,6 +15,7 @@ export default StyleSheet.create({
     fontSize: 10,
   },
   button: {
-    opacity: 0.72
+    opacity: 0.72,
+    color: '#fff',
   }
 });

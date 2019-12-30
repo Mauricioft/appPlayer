@@ -1,23 +1,22 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, } from 'react-native';
 import { ControlLayout as Layout } from '../control-layout/';
-import { Button } from '../core/';
+import { Button, Divide } from '../core/';
 import styles from './styles';
 
 type Props = {
-  paused: any;
-  shuffleOn: any;
-  repeatOn: any;
-  onPressPlay: any;
-  onPressPause: any;
-  onBack: any;
-  onForward: any;
-  onPressShuffle: any;
-  onPressRepeat: any;
-  forwardDisabled: any;
+  paused?: any;
+  shuffleOn?: any;
+  repeatOn?: any;
+  onPressPlay?: any;
+  onPressPause?: any;
+  onBack?: any;
+  onForward?: any;
+  onPressShuffle?: any;
+  onPressRepeat?: any;
+  forwardDisabled?: any;
 }
 
-const Controls = ({
+export const Controls = ({
   paused,
   shuffleOn,
   repeatOn,
@@ -30,38 +29,20 @@ const Controls = ({
   forwardDisabled,
 }: Props) => (
   <Layout>
-    {
-      /*
-        <TouchableOpacity activeOpacity={0.0} onPress={onPressShuffle}>
-          <Image style={[styles.secondaryControl, shuffleOn ? [] : styles.off]} source={require('../img/ic_shuffle_white.png')} />
-        </TouchableOpacity>
-      */
-    }
     <Button 
       icon='ios-shuffle'
       onPress={onPressShuffle}
       buttonStyle={shuffleOn && (styles.off)}
     />
-    <View style={{width: 40}} />
+    <Divide />
     <Button
-      icon='ios-rewind'
+      icon='ios-skip-backward'
+      iconSize={40}
       onPress={onBack}
     />
-    {
-      /*
-        <TouchableOpacity onPress={onBack}>
-          <Image source={require('../img/ic_skip_previous_white_36pt.png')} />
-        </TouchableOpacity>
-      */
-    }
-    <View style={{width: 20}} />
+    <Divide />
     {
       !paused ? (
-        // <TouchableOpacity onPress={onPressPause}>
-        //   <View style={styles.playButton}>
-        //     <Image source={require('../img/ic_pause_white_48pt.png')} />
-        //   </View>
-        // </TouchableOpacity> 
         <Button
           icon='ios-pause'
           iconSize={48}
@@ -69,34 +50,27 @@ const Controls = ({
           buttonStyle={styles.playButton}
         />
       ):(
-        // <TouchableOpacity onPress={onPressPlay}>
-        //   <View style={styles.playButton}>
-        //     <Image source={require('../img/ic_play_arrow_white_48pt.png')} />
-        //   </View>
-        // </TouchableOpacity>
         <Button
-          icon='ios-pause'
+          icon='ios-play'
           iconSize={48}
           onPress={onPressPlay}
           buttonStyle={styles.playButton}
         />
       )
     }
-    <View style={{width: 20}} />
+    <Divide />
     <Button
-      icon='ios-pause'
-      iconSize={48}
-      onPress={onPressPlay}
-      buttonStyle={styles.playButton}
+      icon='ios-skip-forward'
+      iconSize={40}
+      onPress={onForward}
+      disabled={forwardDisabled}
+      buttonStyle={forwardDisabled && (styles.forwardDisabled)}
     />
-    {/* <TouchableOpacity onPress={onForward} disabled={forwardDisabled}>
-      <Image style={[forwardDisabled && {opacity: 0.3}]} source={require('../img/ic_skip_next_white_36pt.png')}/>
-    </TouchableOpacity> */}
-    <View style={{width: 40}} />
-    <TouchableOpacity activeOpacity={0.0} onPress={onPressRepeat}>
-      <Image style={[styles.secondaryControl, repeatOn ? [] : styles.off]} source={require('../img/ic_repeat_white.png')}/>
-    </TouchableOpacity>
+    <Divide />
+    <Button
+      icon='ios-repeat'
+      onPress={onPressRepeat}
+      buttonStyle={repeatOn && (styles.off)}
+    />
   </Layout>
 );
-
-export default Controls;

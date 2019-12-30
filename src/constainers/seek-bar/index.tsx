@@ -5,8 +5,8 @@ import { SeekBar } from '../../components/seek-bar/';
 type Props = {
   currentPosition: number; 
   trackLength: number; 
-  onSlidingStart: () => void; 
-  onSeek: (value: number) => void; 
+  onSlidingStart?: () => void; 
+  onSeek?: (value: number) => void; 
 }
 
 export const SeekBarContainer = ({currentPosition, trackLength, onSlidingStart, onSeek }: Props) => {

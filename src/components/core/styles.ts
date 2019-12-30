@@ -20,5 +20,11 @@ export default StyleSheet.create({
     fontSize: 14,
     fontFamily: 'gibson-regular',
     fontWeight: '300',
-  }
+  },
+  divide: {
+    width: 20
+  },
+  icon_button: {
+    color: '#fff',  
+  },
 });

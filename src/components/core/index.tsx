@@ -3,6 +3,7 @@ import { Space } from './space';
 import { Title } from './title';
 import { SubTitle } from './subtitle';
 import { Button } from './button';
+import { Divide } from './divide';
 
 export {
   Row,
@@ -10,4 +11,5 @@ export {
   Title,
   SubTitle,
   Button,
+  Divide,
 }
