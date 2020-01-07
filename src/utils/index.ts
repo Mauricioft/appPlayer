@@ -1,11 +1,11 @@
-import * as Font from 'expo-font';
+// import * as Font from 'expo-font';
 
-export const fetchFonts = () => {
-  return Font.loadAsync({
-    'gibson-bold': require('../../assets/fonts/gibson-bold.ttf'),
-    'gibson-regular': require('../../assets/fonts/gibson-regular.ttf')
-  });
-}
+// export const fetchFonts = () => {
+//   return Font.loadAsync({
+//     'gibson-bold': require('../../assets/fonts/gibson-bold.ttf'),
+//     'gibson-regular': require('../../assets/fonts/gibson-regular.ttf')
+//   });
+// }
 
 const pad = (n:number, width: number, z: number = 0) => 
   n.toString().length >= width ? 

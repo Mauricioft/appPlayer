@@ -5,8 +5,8 @@ import styles from './styles';
 type Props = {
   currentPosition: number; 
   trackLength: number; 
-  onSlidingStart: () => void; 
-  onSeek: (value: number) => void; 
+  onSlidingStart?: () => void;
+  onSeek?: (value: number) => void;
 }
 
 export const ProgressBar = ({ currentPosition, trackLength, onSlidingStart, onSeek }: Props) => (

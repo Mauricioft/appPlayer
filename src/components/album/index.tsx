@@ -4,7 +4,7 @@ import styles from './styles';
 
 type Props = {
   url: string;
-  onPress: any;
+  onPress?: () => void;
 }
 
 export const Album = ({ url, onPress }: Props) => (

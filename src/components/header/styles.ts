@@ -14,7 +14,7 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 10,
   },
-  button: {
+  icon: {
     opacity: 0.72,
     color: '#fff',
   }

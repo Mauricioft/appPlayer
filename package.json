@@ -1,27 +1,44 @@
 {
-  "main": "node_modules/expo/AppEntry.js",
+  "name": "appPlayer",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "eject": "expo eject"
+    "android:clean": "cd android && gradlew clean && cd .. && yarn android",
+    "android:debug": "cd android && gradlew.bat app:installDebug && cd .. && yarn android",
+    "android": "react-native run-android",
+    "adb:reverse": "adb reverse tcp:8081 tcp:8081",
+    "adb:tools": "adb shell input keyevent 82",
+    "adb:date": "adb shell date && date",
+    "adb:devices": "adb devices",
+    "linking": "react-native link",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@react-native-community/slider": "^2.0.8",
-    "expo": "~36.0.0",
-    "expo-av": "~8.0.0",
-    "react": "~16.9.0",
-    "react-dom": "~16.9.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
-    "react-native-screens": "2.0.0-alpha.12",
-    "react-native-web": "~0.11.7"
+    "@types/jest": "^24.0.25",
+    "@types/react": "^16.9.17",
+    "@types/react-native": "^0.60.27",
+    "@types/react-test-renderer": "^16.9.1",
+    "react": "16.9.0",
+    "react-native": "0.61.5",
+    "react-native-vector-icons": "^6.6.0",
+    "react-native-video": "^5.0.2",
+    "typescript": "^3.7.4"
   },
   "devDependencies": {
-    "@types/react": "~16.9.0",
-    "@types/react-native": "~0.60.23",
-    "babel-preset-expo": "~8.0.0",
-    "typescript": "~3.6.3"
+    "@babel/core": "^7.7.7",
+    "@babel/runtime": "^7.7.7",
+    "@react-native-community/eslint-config": "^0.0.6",
+    "babel-jest": "^24.9.0",
+    "eslint": "^6.8.0",
+    "jest": "^24.9.0",
+    "metro-react-native-babel-preset": "^0.57.0",
+    "react-test-renderer": "16.9.0"
   },
-  "private": true
+  "jest": {
+    "preset": "react-native"
+  }
 }

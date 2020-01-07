@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   slider: {
-    marginTop: -12,
+    flex: 1,
+    paddingVertical: 12,
   },
 });

@@ -1,7 +1,8 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
-const { width } = Dimensions.get('window');
-const imageSize = width - 48;
+const { width, height } = Dimensions.get('window');
+const imageWidth = width - 48;
+const imageHeight = height - 320;
 
 export default  StyleSheet.create({
   container: {
@@ -9,7 +10,7 @@ export default  StyleSheet.create({
     paddingRight: 24,
   },
   image: {
-    width: imageSize,
-    height: imageSize,
+    width: imageWidth,
+    height: imageHeight,
   },
 });

@@ -1,5 +1,5 @@
 import React, { forwardRef, RefObject } from 'react';
-import { Video as AvVideo } from 'expo-av';
+import * as AvVideo from 'react-native-video';
 import styles from './styles';
 
 type Props = {
